@@ -24,13 +24,13 @@ return "Em recuperacao";
 export default function App() {
   return (
     <View style={styles.container}>
-     {eu.nome}
-      {eu.idade}
-      {eu.cidade}
-      {eu.nota1}
-      {eu.nota2}
-      {calcularMedia(eu)}
-     {situacao(media)}
+     <Text>{eu.nome}</Text>
+     <Text>{eu.idade}</Text>
+     <Text>{eu.cidade}</Text>
+     <Text>{eu.nota1}</Text>
+     <Text>{eu.nota2}</Text>
+     <Text>{calcularMedia(eu)}</Text>
+     <Text>{situacao(media)}</Text>
     </View>
   );
 }

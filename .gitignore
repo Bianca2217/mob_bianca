@@ -16,4 +16,4 @@ npm-debug.log*
 
 # Exercicio 7 (Desafio) da Aula 01: descomente a linha abaixo
 # ANTES de criar o projeto teste-meu, senao o push leva 20 mil arquivos.
-# teste-meu/
+teste-meu/
