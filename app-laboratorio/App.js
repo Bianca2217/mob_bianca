@@ -1,11 +1,48 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+
+const aluno = {
+  nome: 'Ana Beatriz',
+  turma: '3M',
+  nota1: 7.5,
+  nota2: 9.0,
+};
+
+function calcularMedia(a) {
+  return (a.nota1 + a.nota2) / 2;
+}
+
+function situacao(media) {
+  if (media >= 6) {
+    return 'Aprovado';
+  }
+  return 'Em recuperação';
+}
 
 export default function App() {
+  const media = calcularMedia(aluno);
+
   return (
     <View style={styles.tela}>
-      <View style={styles.caixa1} />
-      <View style={styles.caixa2} />
-      <View style={styles.caixa3} />
+
+      {/* TOPO */}
+      <View style={styles.topo}>
+        <Text style={styles.titulo}>Boletim</Text>
+      </View>
+
+      {/* MEIO */}
+      <View style={styles.meio}>
+        <Text style={styles.linha}>Nome: {aluno.nome}</Text>
+        <Text style={styles.linha}>Turma: {aluno.turma}</Text>
+        <Text style={styles.linha}>Média: {media}</Text>
+      </View>
+
+      {/* RODAPÉ */}
+      <View style={styles.rodape}>
+        <Text style={styles.situacao}>
+          {situacao(media)}
+        </Text>
+      </View>
+
     </View>
   );
 }
@@ -13,20 +50,42 @@ export default function App() {
 const styles = StyleSheet.create({
   tela: {
     flex: 1,
+    backgroundColor: '#fff',
   },
 
-  caixa1: {
+  topo: {
+    padding: 20,
+    backgroundColor: '#6c4ab6',
+    alignItems: 'center',
+  },
+
+  titulo: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+
+  meio: {
     flex: 1,
-    backgroundColor: '#ff0000',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    gap: 8,
   },
 
-  caixa2: {
-    flex: 2,
-    backgroundColor: '#00ff00',
+  linha: {
+    fontSize: 16,
   },
 
-  caixa3: {
-    flex: 1,
-    backgroundColor: '#0000ff',
+  rodape: {
+    backgroundColor: '#0033fe',
+    padding: 30,
+    alignItems: 'center',
+  },
+
+  situacao: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
   },
 });
