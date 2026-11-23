@@ -1,3 +1,4 @@
+
 import { StyleSheet, Text, View } from 'react-native';
 
 const aluno = {
@@ -31,9 +32,22 @@ export default function App() {
 
       {/* MEIO */}
       <View style={styles.meio}>
-        <Text style={styles.linha}>Nome: {aluno.nome}</Text>
-        <Text style={styles.linha}>Turma: {aluno.turma}</Text>
-        <Text style={styles.linha}>Média: {media}</Text>
+
+        <View style={styles.linha}>
+          <Text style={styles.rotulo}>Nome:</Text>
+          <Text style={styles.valor}>{aluno.nome}</Text>
+        </View>
+
+        <View style={styles.linha}>
+          <Text style={styles.rotulo}>Turma:</Text>
+          <Text style={styles.valor}>{aluno.turma}</Text>
+        </View>
+
+        <View style={styles.linha}>
+          <Text style={styles.rotulo}>Média:</Text>
+          <Text style={styles.valor}>{media.toFixed(2)}</Text>
+        </View>
+
       </View>
 
       {/* RODAPÉ */}
@@ -68,12 +82,22 @@ const styles = StyleSheet.create({
   meio: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     padding: 20,
-    gap: 8,
+    gap: 15,
   },
 
   linha: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  rotulo: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  valor: {
     fontSize: 16,
   },
 
