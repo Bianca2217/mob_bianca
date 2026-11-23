@@ -65,7 +65,8 @@ fontSize: 16,
 },
 
 rodape: {
-padding: 20,
+backgroundColor: '#0033fe',
+padding: 30,
 alignItems: 'center',
 },
 
